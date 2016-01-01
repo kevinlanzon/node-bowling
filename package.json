@@ -1,0 +1,25 @@
+{
+  "name": "node-bowling",
+  "version": "1.0.0",
+  "description": "10 pin bowling scorecard in node",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinlanzon/node-bowling.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Kevin Lanzon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinlanzon/node-bowling/issues"
+  },
+  "homepage": "https://github.com/kevinlanzon/node-bowling#readme",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
