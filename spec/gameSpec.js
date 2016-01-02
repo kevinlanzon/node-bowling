@@ -1,13 +1,19 @@
 var Game = require('../js/game');
 
 describe('10 Pin Bowling', function() {
+  var game;
 
-  var game = new Game();
+  beforeEach(function() {
+    game = new Game();
+  });
 
   it('should score 0 for a gutter game', function() {
-    for (var i = 0; i < 20; i++) {
-      game.roll(0);
-    }
-    expect(game.score).toEqual(0);
+    game.gameRolls(0, 20);
+    expect(game.currentScore()).toEqual(0);
+  });
+
+  it('should score 20 when all ones are rolled', function() {
+    game.gameRolls(1, 20);
+    expect(game.currentScore()).toEqual(20);
   });
 });
