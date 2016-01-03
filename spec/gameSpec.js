@@ -16,4 +16,13 @@ describe('10 Pin Bowling', function() {
     game.gameRolls(1, 20);
     expect(game.currentScore()).toEqual(20);
   });
+
+  it('should roll a spare', function() {
+    game.roll(3);
+    game.roll(3);
+    game.roll(3);
+    game.roll(4);
+    game.gameRolls(0, 16);
+    expect(game.currentScore()).toEqual(13);
+  });
 });
