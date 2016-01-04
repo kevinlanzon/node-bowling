@@ -15,7 +15,7 @@ Game.prototype.gameRolls = function(pins, number) {
 Game.prototype.currentScore  = function() {
   var score = 0;
   var rollNumber = 0;
-  var bowl = this;
+  var game = this;
 
   for (var i = 0; i < 10; i++) {
     if (rollStrike()) {
@@ -33,15 +33,15 @@ Game.prototype.currentScore  = function() {
   return score;
 
   function rollStrike() {
-    return bowl.rolls[rollNumber] === 10;
+    return game.rolls[rollNumber] === 10;
   }
 
   function rollSpare() {
-    return bowl.rolls[rollNumber] + bowl.rolls[rollNumber + 1] === 10;
+    return game.rolls[rollNumber] + game.rolls[rollNumber + 1] === 10;
   }
 
   function strikeScore() {
-    return bowl.rolls[rollNumber] + bowl.rolls[rollNumber + 1] + bowl.rolls[rollNumber + 2];
+    return game.rolls[rollNumber] + game.rolls[rollNumber + 1] + game.rolls[rollNumber + 2];
   }
 
   function spareScore() {
@@ -49,7 +49,7 @@ Game.prototype.currentScore  = function() {
   }
 
   function normalScore() {
-    return bowl.rolls[rollNumber] + bowl.rolls[rollNumber + 1];
+    return game.rolls[rollNumber] + game.rolls[rollNumber + 1];
   }
 };
 
