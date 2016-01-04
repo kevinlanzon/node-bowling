@@ -25,4 +25,12 @@ describe('10 Pin Bowling', function() {
     game.gameRolls(0, 16);
     expect(game.currentScore()).toEqual(13);
   });
+
+  it('should roll a strike', function() {
+    game.roll(10);
+    game.roll(4);
+    game.roll(3);
+    game.gameRolls(0, 16);
+    expect(game.currentScore()).toEqual(24);
+  });
 });
