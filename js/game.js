@@ -33,11 +33,11 @@ Game.prototype.currentScore  = function() {
   return score;
 
   function rollStrike() {
-    return bowl.rolls[rollNumber] == 10;
+    return bowl.rolls[rollNumber] === 10;
   }
 
   function rollSpare() {
-    return bowl.rolls[rollNumber] + bowl.rolls[rollNumber + 1] == 10;
+    return bowl.rolls[rollNumber] + bowl.rolls[rollNumber + 1] === 10;
   }
 
   function strikeScore() {
@@ -45,7 +45,7 @@ Game.prototype.currentScore  = function() {
   }
 
   function spareScore() {
-    return bowl.rolls[rollNumber] + bowl.rolls[rollNumber + 1] + bowl.rolls[rollNumber + 2];
+    return strikeScore();
   }
 
   function normalScore() {
