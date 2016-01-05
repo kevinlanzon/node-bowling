@@ -33,4 +33,9 @@ describe('10 Pin Bowling', function() {
     game.gameRolls(0, 16);
     expect(game.currentScore()).toEqual(24);
   });
+
+  it('should roll a perfect score', function() {
+    game.gameRolls(10, 12);
+    expect(game.currentScore()).toEqual(300);
+  });
 });
